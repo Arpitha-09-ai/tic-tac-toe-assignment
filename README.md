@@ -180,7 +180,7 @@ Then reference it:
 
 ```md
 
-!\[Game UI](screenshots/game-ui.png)
+![Game UI](screenshots/game-ui.png)
 
 ```
 
