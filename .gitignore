@@ -1,0 +1,10 @@
+**/bin/
+**/obj/
+**/.vs/
+
+*.suo
+*.user
+
+Frontend/tic-tac-toe/node_modules/
+Frontend/tic-tac-toe/dist/
+Frontend/tic-tac-toe/.angular/

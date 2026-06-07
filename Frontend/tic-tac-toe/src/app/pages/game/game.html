@@ -1,0 +1,145 @@
+<div class="container">
+
+  <h1 class="title">Tic Tac Toe</h1>
+
+  <!-- TOP BUTTONS -->
+  <div class="button-panel">
+
+    <button (click)="createGame(0)">
+      New Two Player Game
+    </button>
+
+    <button (click)="createGame(1)">
+      New Computer Game
+    </button>
+
+  </div>
+
+  <hr>
+
+  <p class="mode">
+    Mode:
+    {{
+      currentGame?.id
+        ? (currentGame.mode === 0 ? 'Two Player' : 'Computer')
+        : 'Not Started'
+    }}
+  </p>
+
+  <h3 *ngIf="currentGame.status === 0 && currentGame?.id">
+    Current Player: {{ currentGame.currentPlayer }}
+  </h3>
+
+  <div *ngIf="currentGame.status === 1">
+    <h2 class="winner">
+      🏆 Winner: {{ currentGame.winner }}
+    </h2>
+  </div>
+
+  <div *ngIf="currentGame.status === 2">
+    <h2 class="draw">
+      🤝 Game Draw
+    </h2>
+  </div>
+
+  <div class="game-layout">
+
+    <!-- BOARD -->
+    <div class="board-section">
+
+      <table class="board">
+
+        <tr *ngFor="let row of currentGame.board; let rowIndex = index">
+
+          <td
+            *ngFor="let cell of row; let colIndex = index"
+            (click)="cellClicked(rowIndex, colIndex)"
+            [style.background-color]="
+              isWinningCell(rowIndex, colIndex)
+                ? 'lightgreen'
+                : 'white'
+            ">
+
+            <span
+  [style.color]="
+    cell === 'X'
+      ? '#1976d2'
+      : cell === 'O'
+        ? '#d32f2f'
+        : 'black'
+  ">
+  {{ cell }}
+</span>
+
+          </td>
+
+        </tr>
+
+      </table>
+
+    </div>
+
+    <!-- MOVE HISTORY -->
+    <div class="history-card">
+
+      <h3>Move History</h3>
+
+      <ul>
+
+        <li *ngFor="let move of currentGame.moveHistory">
+
+          {{ move.moveNumber }}.
+          {{ move.player }}
+          ({{ move.row }}, {{ move.column }})
+
+        </li>
+
+        <li *ngIf="currentGame.moveHistory.length === 0">
+          No moves yet
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- SCOREBOARD -->
+    <div *ngIf="scoreboard" class="scoreboard-card">
+
+      <h3>Score Board</h3>
+
+      <p>X Wins: {{ scoreboard.xWins }}</p>
+
+      <p>O Wins: {{ scoreboard.oWins }}</p>
+
+      <p>Draws: {{ scoreboard.draws }}</p>
+
+    </div>
+
+  </div>
+
+  <!-- BOTTOM BUTTONS -->
+  <div class="bottom-panel">
+
+    <button
+      (click)="undo()"
+      [disabled]="!currentGame || currentGame.moveHistory.length === 0">
+
+      Undo
+
+    </button>
+
+    <button (click)="resetGame()">
+
+      Reset Game
+
+    </button>
+
+    <button (click)="resetScoreboard()">
+
+      Reset Scoreboard
+
+    </button>
+
+  </div>
+
+</div>

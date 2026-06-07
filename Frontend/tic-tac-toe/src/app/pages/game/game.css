@@ -1,0 +1,124 @@
+.container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.title {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.button-panel {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.button-panel button,
+.bottom-panel button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #1976d2;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.button-panel button:hover,
+.bottom-panel button:hover {
+  background: #1565c0;
+}
+
+.button-panel button:disabled,
+.bottom-panel button:disabled {
+  background: #bdbdbd;
+  cursor: not-allowed;
+}
+
+.mode {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.winner {
+  text-align: center;
+  color: green;
+}
+
+.draw {
+  text-align: center;
+  color: orange;
+}
+
+.game-layout {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  align-items: flex-start;
+  margin-top: 25px;
+}
+
+.board-section {
+  flex: 0 0 auto;
+}
+
+.board {
+  border-collapse: collapse;
+}
+
+.board td {
+  width: 110px;
+  height: 110px;
+  border: 2px solid #444;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 48px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.board td:hover {
+  background: #f1f8ff !important;
+}
+
+.history-card,
+.scoreboard-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.history-card {
+  width: 280px;
+  min-height: 330px;
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.scoreboard-card {
+  width: 220px;
+}
+
+.history-card ul {
+  padding-left: 20px;
+}
+
+.history-card li {
+  margin-bottom: 10px;
+}
+
+.bottom-panel {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
