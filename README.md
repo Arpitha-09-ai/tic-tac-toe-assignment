@@ -174,15 +174,11 @@ screenshots/game-ui.png
 
 
 
-Then reference it:
-
-
-
-```md
+## Screenshot
 
 ![Game UI](screenshots/game-ui.png)
 
-```
+---
 
 
 
@@ -190,7 +186,8 @@ Then reference it:
 
 
 
-\## API Endpoint Summary
+---
+## API Endpoint Summary
 
 
 
